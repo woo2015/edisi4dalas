@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edisi 4 Dalas School Magazine</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    :root { --accent: #ff7f24; }
+    /* Pastikan iframe benar-benar bisa fullscreen di area konten */
+    html, body { height: 100%; }
+    body { margin: 0; }
+  </style>
+</head>
+<body class="h-screen w-screen overflow-hidden bg-neutral-100">
+  <div class="h-full w-full flex flex-col">
+    <!-- Header -->
+    <header class="bg-white border-b border-neutral-200">
+      <div class="h-16 px-4 sm:px-6 flex items-center justify-between">
+        <div class="min-w-0">
+          <h1 class="text-base sm:text-lg font-semibold text-neutral-900 truncate">Edisi 4</h1>
+          <p class="text-xs text-neutral-500 -mt-0.5 hidden sm:block">Dalas School Magazine</p>
+        </div>
+
+        <a
+          href="https://woo2015.github.io/jurnalistik/#emagazine"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-white shadow-sm hover:opacity-95 active:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2"
+          style="background: var(--accent); focus-ring-color: var(--accent);"
+          aria-label="Buka situs utama"
+        >
+          <span class="hidden sm:inline">Kembali ke Situs</span>
+          <span class="sm:hidden">Kembali</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+            <path d="M14 3h7v7" />
+            <path d="M10 14 21 3" />
+            <path d="M21 14v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- Konten Fullscreen (mengisi sisa layar) -->
+    <main class="flex-1 min-h-0 bg-neutral-100">
+      <div class="relative w-full h-full">
+        <iframe
+          class="absolute inset-0 w-full h-full border-0"
+          src="https://online.fliphtml5.com/kemkv/ozwy/"
+          title="REVISI_EDISI4"
+          scrolling="no"
+          frameborder="0"
+          allowtransparency="true"
+          allowfullscreen="true"
+        ></iframe>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Tidak ada JS wajib, tapi kita jaga UX untuk perangkat mobile.
+    // Kunci scroll agar tetap terasa seperti aplikasi fullscreen.
+    document.addEventListener('touchmove', (e) => {
+      // Biarkan interaksi di iframe (browser akan menangani sendiri),
+      // tetapi cegah body ikut terscroll.
+      if (e.target === document.body) e.preventDefault();
+    }, { passive: false });
+  </script>
+</body>
+</html>
